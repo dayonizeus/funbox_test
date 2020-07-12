@@ -1,0 +1,229 @@
+.card, .card--selected, .card--disabled {
+	width: 320px;
+	height: 480px;
+	box-sizing: border-box;
+}
+
+.card--disabled {
+	.card__body {
+		span {
+		opacity: 0.5;
+		}
+	}
+	.card__top {
+		border-right: 4px solid $disabled_border;
+		border-top: 4px solid $disabled_border;
+		&:after {
+			background: linear-gradient(to bottom right, 
+			transparent 30.5px, 
+			$disabled_border 30.5px, 
+			$disabled_border 33.2px, 
+			$card_background 33.2px);
+		}
+	}
+	.card__main {
+		border-left: 4px solid $disabled_border;
+		border-right: 4px solid $disabled_border;
+		border-bottom: 4px solid $disabled_border;
+	}
+	.card__image {
+		opacity: 0.5;
+	}
+	.card__size {
+		background: $disabled_border;
+	}
+	
+}
+
+.card__top {
+	box-sizing: border-box;
+	width: 277px;
+	height: 43px;
+	margin-left: 43px;
+	border-top: 4px solid $primary;
+	border-right: 4px solid $primary;
+	border-top-right-radius: $corner-rounding;
+	background: $card-background;
+	font-family: $main_font;
+	font-size: 16px;
+	color: $dark50;
+	padding-top: 17px;
+	padding-left: 5px;
+	position: relative;
+	&:after {
+		position: absolute;
+		top: -4px;
+		left: -43px;
+		content: '';
+		width: 43px;
+		height: 43px;
+		background: linear-gradient(to bottom right, 
+			transparent 30.5px, 
+			$primary 30.5px, 
+			$primary 33.2px, 
+			$card_background 33.2px);
+	}
+}
+
+
+.card__top--hover {
+	box-sizing: border-box;
+	width: 277px;
+	height: 43px;
+	margin-left: 43px;
+	border-top: 4px solid $secondary;
+	border-right: 4px solid $secondary;
+	border-top-right-radius: $corner-rounding;
+	background: $card-background;
+	font-family: $main_font;
+	font-size: 16px;
+	color: $secondary;
+	padding-top: 17px;
+	padding-left: 5px;
+	position: relative;
+	&:after {
+		position: absolute;
+		top: -4px;
+		left: -43px;
+		content: '';
+		width: 43px;
+		height: 43px;
+		background: linear-gradient(to bottom right, 
+			transparent 30.5px, 
+			$secondary 30.5px, 
+			$secondary 33.2px, 
+			$card_background 33.2px);
+	}
+}
+
+.card--selected .card__top {
+	@extend .card__top;
+	border-top: 4px solid $secondary;
+	border-right: 4px solid $secondary;
+	&:after {
+		background: linear-gradient(to bottom right, 
+			transparent 30.5px, 
+			$secondary 30.5px, 
+			$secondary 33.2px, 
+			$card_background 33.2px);
+	}
+}
+
+.card__main {
+	box-sizing: border-box;
+	height: 437px;
+	background: $card-background;
+	border-left: 4px solid $primary;
+	border-right: 4px solid $primary;
+	border-bottom: 4px solid $primary;
+	border-bottom-left-radius: $corner-rounding;
+	border-bottom-right-radius: $corner-rounding;
+	position: relative;
+	.card__image {
+		position: absolute;
+		top: 164px;
+		content: '';
+		width: 311px;
+		height: 269px;
+		background-image: url('./assets/img/kitty.png');
+		background-repeat: no-repeat;
+		background-position: -4px 0;
+	}	
+}
+
+.card--selected .card__main {
+	border-left: 4px solid $secondary;
+	border-right: 4px solid $secondary;
+	border-bottom: 4px solid $secondary;
+}
+
+.card__title {
+	font-family: $main_font;
+	font-size: 48px;
+	font-weight: bold;
+	color: $dark;
+	padding-top: 2px;
+	padding-left: 42px;
+}
+
+.card__type {
+	font-family: $main_font;
+	font-size: 24px;
+	font-weight: bold;
+	color: $dark;
+	margin-top: -2px;
+	padding-left: 44px;
+}
+
+
+.card__portion {
+	font-family: $main_font;
+	font-size: 14px;
+	line-height: 16px;
+	color: $dark50;
+	margin-left: 44px;
+	margin-top: 15px;
+}
+
+.card__mice {
+	@extend .card__portion;
+	margin-top: 0;
+}
+
+.card__satisfied {
+	@extend .card__portion;
+	margin-top: 0;
+}
+
+.card__size {
+	position: absolute;
+	right: 11px;
+	bottom: 11px;
+	box-sizing: border-box;
+	width: 81px;
+	height: 81px;
+	border-radius: 50%;
+	background: $primary;
+	color: $light;
+	text-align: center;
+}
+
+.card--selected .card__size {
+	background: $secondary;
+}
+
+.card__size-value {
+	font-family: $main_font;
+	font-size: 42px;
+	line-height: 22px;
+	padding-top: 21px;
+}
+
+.card__size-unit {
+	font-family: $main_font;
+	font-size: 21px;
+	margin-top: 6px;
+}
+
+.card__bottom-label {
+	font-family: $main_font;
+	font-size: 13px;
+	line-height: 16px;
+	color: $light;
+	text-shadow: 0 1px 0 $dark;
+	text-align: center;
+	margin-top: 13px;
+	span {
+		font-family: $main_font;
+		font-weight: bold;
+		color: $primary;
+		text-shadow: 0 1px 0 $dark;
+		text-decoration: underline;
+		text-decoration-style: dashed;
+	}
+}
+
+.card__bottom-label--disabled {
+	@extend .card__bottom-label;
+	color: $disabled_text;
+}

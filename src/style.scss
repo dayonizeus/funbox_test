@@ -1,0 +1,48 @@
+@import './scss/fonts.scss';
+@import './scss/vars.scss';
+@import './blocks/**/*.scss';
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+.wraper {
+	min-height: 100vh;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%),
+				url('./assets/img/Pattern.png');
+	// background-repeat: repeat-y;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.single-block {
+	width: 100%;
+}
+
+.single-block__title {
+	font-family: $secondary_font;
+	font-size: 36px;
+	color: $light;
+	text-align: center;
+	@media screen and (max-width: 1023px) {
+		margin-top: 20px;
+	}
+}
+
+.single-block__body {
+	margin-top: 23px;
+	display: flex;
+	justify-content: space-around;
+	@media screen and (max-width: 1023px) {
+		flex-wrap: wrap;
+	}
+}
+
+.single-block__card {
+	@media screen and (max-width: 1023px) {
+		margin-bottom: 45px;
+	}
+}
