@@ -11,4 +11,4 @@
 
 [Исходник задания](https://dl.funbox.ru/qt-html-css-js.zip)
 
-[Результат](https://dayonizeus.github.io/dayonizeus_access.gitgub.io/)
+[Результат](https://dayonizeus.github.io/kitties/)
